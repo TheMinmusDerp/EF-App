@@ -19,7 +19,7 @@ export default class App extends React.Component {
       totalDuration: 1500,
       arrayHolder:[],
       textInput_Holder:'',
-      timerInput_Holder:''
+      timerInput_Holder:0
     };
   }
   
@@ -30,8 +30,9 @@ export default class App extends React.Component {
   //}
 
   setTime(){
+    var timerInputHolder=this.state.timerInput_Holder
     this.setState({
-      totalDuration:this.state.timerInput_Holder
+      totalDuration:timerInputHolder
     })
   }
 
@@ -104,7 +105,7 @@ export default class App extends React.Component {
           }}
           value={this.state.text}
         />
-        <TouchableOpacity /*onPress={this.setTime()}*/>
+        <TouchableOpacity onPress={this.setTime}>
           <Ionicons
             name={"checkmark-circle"}
             size={RFValue(40)}
